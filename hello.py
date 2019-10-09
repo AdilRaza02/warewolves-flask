@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify
+from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,7 +9,7 @@ def hello_world():
 def func1():
     p1 = request.args.get('p1')
     p2 = request.args.get('p2')
-    data = {{'p1':p1 },{'p2':p2}}
+    data = {"p1":p1 ,"p2":p2}
     return jsonify(data)
     
 
