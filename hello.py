@@ -6,12 +6,13 @@ app = Flask(__name__)
 def hello_world():
     return 'Developed by: Warewolves'
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/func1', methods=['GET', 'POST'])
 def login():
     username = request.args.get('username')
     password = request.args.get('password')
     print(username)
     print(password)
+    return 'working!!'
 
 if __name__ == '__main__':
     app.run()
