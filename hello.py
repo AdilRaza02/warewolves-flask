@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify
+import test
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -7,10 +9,9 @@ def hello_world():
 
 @app.route('/func1', methods=['GET', 'POST'])
 def func1():
-    p1 = request.args.get('p1')
-    p2 = request.args.get('p2')
-    data = {"p1":p1 ,"p2":p2}
-    return jsonify(data)
+    re=test.get_cleaned_data()
+    print(re)
+    return (re)
     
 
 if __name__ == '__main__':
