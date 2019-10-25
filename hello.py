@@ -61,11 +61,13 @@ def index():
 @app.route('/getFeed')
 def solve():
 	response = getFeed()
-	return jsonify({
+	response = jsonify({
 		'result': response,
 		'status': 'ok',
 		'code': 200
 	})
+	response.headers.add('Access-Control-Allow-Origin', '*')
+	return response
 
 if __name__ == '__main__':
     app.run()
